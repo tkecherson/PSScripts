@@ -1,9 +1,9 @@
 <# 
 .SYNOPSIS
-    Tests for a percentage of ping packets dropped.
+    Generates random passwords.
 
 .DESCRIPTION
-    Runs a given number of pings (by default, 100) and returns how many were lost.
+    Generates random passwords of a given length.
 
 .PARAMETER PassLength
     Required, the requested password length. This is 24 by default.
@@ -12,12 +12,16 @@
     Required, the number of passwords generated. This is 10 by default.
 
 .EXAMPLE
-    PS> .\Get-RandomPassword.ps1 -PassLength 16 -PassCount 10
-	Creates 10 passwords that are each 16 characters long.
+    PS> .\Get-RandomPassword.ps1 -PassLength 24 -PassCount 10
+	Creates 10 passwords that are each 24 characters long.
 
 .EXAMPLE
-    PS> .\Get-RandomPassword.ps1 16 10
-	Creates 10 passwords that are each 16 characters long.
+    PS> .\Get-RandomPassword.ps1 24 10
+	Creates 10 passwords that are each 24 characters long.
+
+.EXAMPLE
+    PS> .\Get-RandomPassword.ps1
+	Creates 10 passwords that are each 24 characters long.
 
 .NOTES
     Author: Tim Kecherson
