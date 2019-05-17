@@ -1,30 +1,54 @@
-#Request Password Length
-$count = Read-Host -Prompt "Input Password Length"
+<# 
+.SYNOPSIS
+    Tests for a percentage of ping packets dropped.
 
-#Generate Password
-$password0 = -join ((33..126) * 3 | Get-Random -Count $count | ForEach-Object {[char]$_})
-$password1 = -join ((33..126) * 3 | Get-Random -Count $count | ForEach-Object {[char]$_})
-$password2 = -join ((33..126) * 3 | Get-Random -Count $count | ForEach-Object {[char]$_})
-$password3 = -join ((33..126) * 3 | Get-Random -Count $count | ForEach-Object {[char]$_})
-$password4 = -join ((33..126) * 3 | Get-Random -Count $count | ForEach-Object {[char]$_})
-$password5 = -join ((33..126) * 3 | Get-Random -Count $count | ForEach-Object {[char]$_})
-$password6 = -join ((33..126) * 3 | Get-Random -Count $count | ForEach-Object {[char]$_})
-$password7 = -join ((33..126) * 3 | Get-Random -Count $count | ForEach-Object {[char]$_})
-$password8 = -join ((33..126) * 3 | Get-Random -Count $count | ForEach-Object {[char]$_})
-$password9 = -join ((33..126) * 3 | Get-Random -Count $count | ForEach-Object {[char]$_})
+.DESCRIPTION
+    Runs a given number of pings (by default, 100) and returns how many were lost.
 
-#Output Password
-Write-Host ""
+.PARAMETER PassLength
+    Required, the requested password length. This is 16 by default.
+
+.PARAMETER PassCount
+    Required, the number of passwords generated. This is 10 by default.
+
+.EXAMPLE
+    PS> .\Get-RandomPassword.ps1 -PassLength 16 -PassCount 10
+	Creates 10 passwords that are each 16 characters long.
+
+.EXAMPLE
+    PS> .\Get-RandomPassword.ps1 16 10
+	Creates 10 passwords that are each 16 characters long.
+
+.NOTES
+    Author: Tim Kecherson
+	Version Number: 1.1
+	Revision Date: 2019.05.13
+
+#>
+
+param(
+    [Parameter(Position=0,Mandatory=$False)]
+    [Int]$PassLength=16,
+    [Parameter(Position=1,Mandatory=$False)]
+    [Int]$PassCount=10
+
+)
+
+Write-Host "Generating passwords, please wait."
+For ($i=1; $i -le 4; $i++)
+{
+    Write-Host "..."
+    Start-Sleep -Milliseconds 250
+}
 Write-Host "Your passwords are:"
 Write-Host ""
-Write-Host "$($password0)"
-Write-Host "$($password1)"
-Write-Host "$($password2)"
-Write-Host "$($password3)"
-Write-Host "$($password4)"
-Write-Host "$($password5)"
-Write-Host "$($password6)"
-Write-Host "$($password7)"
-Write-Host "$($password8)"
-Write-Host "$($password9)"
+
+For ($i=1; $i -le $PassCount; $i++)
+{
+    #Generate Password
+    -join ((33..126) * 4 | Get-Random -Count $PassLength | ForEach-Object {[char]$_}) | Out-Host
+}
+
 Write-Host ""
+
+Break
