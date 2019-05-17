@@ -2,16 +2,16 @@
 $count = Read-Host -Prompt "Input Password Length"
 
 #Generate Password
-$password0 = -join ((33..126) * 3 | Get-Random -Count $count | % {[char]$_})
-$password1 = -join ((33..126) * 3 | Get-Random -Count $count | % {[char]$_})
-$password2 = -join ((33..126) * 3 | Get-Random -Count $count | % {[char]$_})
-$password3 = -join ((33..126) * 3 | Get-Random -Count $count | % {[char]$_})
-$password4 = -join ((33..126) * 3 | Get-Random -Count $count | % {[char]$_})
-$password5 = -join ((33..126) * 3 | Get-Random -Count $count | % {[char]$_})
-$password6 = -join ((33..126) * 3 | Get-Random -Count $count | % {[char]$_})
-$password7 = -join ((33..126) * 3 | Get-Random -Count $count | % {[char]$_})
-$password8 = -join ((33..126) * 3 | Get-Random -Count $count | % {[char]$_})
-$password9 = -join ((33..126) * 3 | Get-Random -Count $count | % {[char]$_})
+$password0 = -join ((33..126) * 3 | Get-Random -Count $count | ForEach-Object {[char]$_})
+$password1 = -join ((33..126) * 3 | Get-Random -Count $count | ForEach-Object {[char]$_})
+$password2 = -join ((33..126) * 3 | Get-Random -Count $count | ForEach-Object {[char]$_})
+$password3 = -join ((33..126) * 3 | Get-Random -Count $count | ForEach-Object {[char]$_})
+$password4 = -join ((33..126) * 3 | Get-Random -Count $count | ForEach-Object {[char]$_})
+$password5 = -join ((33..126) * 3 | Get-Random -Count $count | ForEach-Object {[char]$_})
+$password6 = -join ((33..126) * 3 | Get-Random -Count $count | ForEach-Object {[char]$_})
+$password7 = -join ((33..126) * 3 | Get-Random -Count $count | ForEach-Object {[char]$_})
+$password8 = -join ((33..126) * 3 | Get-Random -Count $count | ForEach-Object {[char]$_})
+$password9 = -join ((33..126) * 3 | Get-Random -Count $count | ForEach-Object {[char]$_})
 
 #Output Password
 Write-Host ""
