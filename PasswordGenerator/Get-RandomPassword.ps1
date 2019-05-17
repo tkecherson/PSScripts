@@ -24,10 +24,12 @@
 	Creates 10 passwords that are each 24 characters long.
 
 .NOTES
+    -------------------------
     Author: Tim Kecherson
 	Version Number: 1.1
 	Revision Date: 2019.05.17
-
+    -------------------------
+    
 #>
 
 param(
