@@ -6,7 +6,7 @@
     Runs a given number of pings (by default, 100) and returns how many were lost.
 
 .PARAMETER PassLength
-    Required, the requested password length. This is 16 by default.
+    Required, the requested password length. This is 24 by default.
 
 .PARAMETER PassCount
     Required, the number of passwords generated. This is 10 by default.
@@ -22,13 +22,13 @@
 .NOTES
     Author: Tim Kecherson
 	Version Number: 1.1
-	Revision Date: 2019.05.13
+	Revision Date: 2019.05.17
 
 #>
 
 param(
     [Parameter(Position=0,Mandatory=$False)]
-    [Int]$PassLength=16,
+    [Int]$PassLength=24,
     [Parameter(Position=1,Mandatory=$False)]
     [Int]$PassCount=10
 
