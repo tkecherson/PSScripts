@@ -18,38 +18,40 @@
     This will determine if SystemDownloads folder is selected for cleanup. Default value is True.
 
 .EXAMPLE
-	PS> .\Emergency-Cleanup.ps1 -ComputerName localhost -CBSLogsSelected $true -NAbleLogsSelected $true = SoftwareDownloadsSelected $true
-	Cleans up Windows CBS logs, N-Able agent logs, and the SoftwareDownloads directory on the local computer.
-
-.EXAMPLE
-	PS> .\Emergency-Cleanup.ps1 -CBSLogsSelected $true -NAbleLogsSelected $true = SoftwareDownloadsSelected $true
+	PS> .\Emergency-Cleanup.ps1
 	Prompts for a computer name, then cleans up Windows CBS logs, N-Able agent logs, and the SoftwareDownloads directory.
 
 .EXAMPLE
-	PS> .\Emergency-Cleanup.ps1 -ComputerName localhost -CBSLogsSelected $false -NAbleLogsSelected $true = SoftwareDownloadsSelected $true
-	Cleans up N-Able agent logs, and the SoftwareDownloads directory on the local computer, but skips CBS logs.
+	PS> .\Emergency-Cleanup.ps1 -ComputerName localhost 
+	Cleans up Windows CBS logs, N-Able agent logs, and the SoftwareDownloads directory on the local computer.
 
 .EXAMPLE
-	PS> .\Emergency-Cleanup.ps1 -ComputerName localhost
-	Cleans up Windows CBS logs, N-Able agent logs, and the SoftwareDownloads directory on the local computer.
+	PS> .\Emergency-Cleanup.ps1 -ComputerName localhost -ExcludeCBSLogs
+	Cleans up N-Able agent logs, and the SoftwareDownloads directory on the local computer, but skips CBS logs.
 
 .NOTES
     This script should be run as an Administrator to stop the services.
     Author: Tim Kecherson
-	Version Number: 1.1
-	Revision Date: 2019.05.13
+	Version Number: 1.2
+	Revision Date: 2019.05.25
 
 #>
 
 param(
     [Parameter(Position=0,Mandatory=$false)]
     [String]$ComputerName,
-    [Parameter(Position=1,Mandatory=$false)]
-    [Boolean]$CBSLogsSelected=$true,
-    [Parameter(Position=2,Mandatory=$false)]
-    [Boolean]$NAbleLogsSelected=$true,
-    [Parameter(Position=3,Mandatory=$false)]
-    [Boolean]$SoftwareDownloadsSelected=$true
+#    [Parameter(Position=1,Mandatory=$false)]
+#    [Boolean]$CBSLogsSelected=$true,
+	[Parameter(Position=1,Mandatory=$false)]
+	[Switch]$ExcludeCBSLogs,
+#    [Parameter(Position=2,Mandatory=$false)]
+#    [Boolean]$NAbleLogsSelected=$true,
+	[Parameter(Position=1,Mandatory=$false)]
+	[Switch]$ExcludeNAbleLogs,
+#    [Parameter(Position=3,Mandatory=$false)]
+#    [Boolean]$SoftwareDownloadsSelected=$true
+	[Parameter(Position=1,Mandatory=$false)]
+	[Switch]$ExcludeSoftwareDownloads
 
 )
 
@@ -95,8 +97,7 @@ Write-Host "Beginning System Scan and Cleanup."
 #                 #
 ###################
 
-If ($CBSLogsSelected -eq $true) {
-
+If ($ExcludeCBSLogs.IsPresent -eq $false) {
 	# Get the logs
 	Write-Host "Checking CBS Logs..."
 	$CBSLogs = Get-ChildItem .\Windows\Logs\CBS\CbsPersist_*.log
@@ -133,7 +134,7 @@ If ($CBSLogsSelected -eq $true) {
 #                    #
 ######################
 
-If ($NAbleLogsSelected -eq $true) {
+If ($ExcludeNAbleLogs.IsPresent -eq $false) {
 
 	# Get the logs
 	Write-Host "Checking N-Able Logs..."
@@ -182,7 +183,7 @@ If ($NAbleLogsSelected -eq $true) {
 #                       #
 #########################
 
-If ($SoftwareDownloadsSelected -eq $true) {
+If ($ExcludeSoftwareDownloads.IsPresent -eq $false) {
 
 	# Stop Services
 	Write-Host "Stopping Update Services..."
@@ -254,4 +255,5 @@ If ($TotalSizeFreedGB -gt 1) {
 	}
 
 Write-Host "Exiting Script."
+
 Break
