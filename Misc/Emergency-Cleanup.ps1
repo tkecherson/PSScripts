@@ -28,6 +28,14 @@
 .EXAMPLE
 	PS> .\Emergency-Cleanup.ps1 -ComputerName localhost -ExcludeCBSLogs
 	Cleans up N-Able agent logs, and the SoftwareDownloads directory on the local computer, but skips CBS logs.
+	
+.EXAMPLE
+	PS> .\Emergency-Cleanup.ps1 -ComputerName localhost -ExcludeNAbleLogs
+	Cleans up CBS logs, and the SoftwareDownloads directory on the local computer, but skips N-Able agent logs.
+	
+.EXAMPLE
+	PS> .\Emergency-Cleanup.ps1 -ComputerName localhost -ExcludeSoftwareDoanloads
+	Cleans up CBS logs and N-Able agent logs on the local computer, but skips the SoftwareDownloads directory.
 
 .NOTES
     This script should be run as an Administrator to stop the services.
@@ -46,11 +54,11 @@ param(
 	[Switch]$ExcludeCBSLogs,
 #    [Parameter(Position=2,Mandatory=$false)]
 #    [Boolean]$NAbleLogsSelected=$true,
-	[Parameter(Position=1,Mandatory=$false)]
+	[Parameter(Position=2,Mandatory=$false)]
 	[Switch]$ExcludeNAbleLogs,
 #    [Parameter(Position=3,Mandatory=$false)]
 #    [Boolean]$SoftwareDownloadsSelected=$true
-	[Parameter(Position=1,Mandatory=$false)]
+	[Parameter(Position=3,Mandatory=$false)]
 	[Switch]$ExcludeSoftwareDownloads
 
 )
@@ -65,15 +73,6 @@ $CBSTotalCount = 0
 $NAbleLogCount = 0
 $SoftwareDistributionFilesCount = 0
 
-# Test admin privileges
-$isAdmin = ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")
-If ($isAdmin -eq $false) {
-
-	Write-Host "Administrative priviliges required, please run the script from an escalated shell."
-	Break
-	
-}
-
 # Choose the target workstation
 if ($ComputerName -eq $null) {
 $ComputerName = Read-Host -Prompt "Input computer name, or press enter to run locally"
@@ -81,8 +80,17 @@ $ComputerName = Read-Host -Prompt "Input computer name, or press enter to run lo
 
 # Set the location
 $CurrentLocation = Get-Location
-If (($ComputerName -eq "") -or ($ComputerName -eq 'LocalHost')) {
+If ((($ComputerName -eq "") -or ($ComputerName -eq 'LocalHost')) -and ($ExcludeSoftwareDownloads.IsPresent -eq $false)) {
 
+	# Test admin privileges
+	$isAdmin = ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")
+		If ($isAdmin -eq $false) {
+
+			Write-Host "Administrative priviliges required, please run the script from an escalated shell."
+			Break
+			
+		}
+	
 	# Set Location (Local)
 	Set-Location -Path C:\
 	
