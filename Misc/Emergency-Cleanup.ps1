@@ -61,6 +61,9 @@ $CBSCabSize = 0
 $NAbleLogSize = 0
 $NAbleLogDataSize = 0
 $SoftwareDistributionFilesSize = 0
+$CBSTotalCount = 0
+$NAbleLogCount = 0
+$SoftwareDistributionFilesCount = 0
 
 # Test admin privileges
 $isAdmin = ([Security.Principal.WindowsPrincipal] [Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole] "Administrator")
