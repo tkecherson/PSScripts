@@ -48,17 +48,8 @@
 param(
     [Parameter(Position=0,Mandatory=$false)]
     [String]$ComputerName,
-#    [Parameter(Position=1,Mandatory=$false)]
-#    [Boolean]$CBSLogsSelected=$true,
-	[Parameter(Position=1,Mandatory=$false)]
 	[Switch]$ExcludeCBSLogs,
-#    [Parameter(Position=2,Mandatory=$false)]
-#    [Boolean]$NAbleLogsSelected=$true,
-	[Parameter(Position=2,Mandatory=$false)]
 	[Switch]$ExcludeNAbleLogs,
-#    [Parameter(Position=3,Mandatory=$false)]
-#    [Boolean]$SoftwareDownloadsSelected=$true
-	[Parameter(Position=3,Mandatory=$false)]
 	[Switch]$ExcludeSoftwareDownloads
 
 )
