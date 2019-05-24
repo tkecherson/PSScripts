@@ -55,7 +55,7 @@ param(
 
 )
 
-# Initial value of size variables is 0
+# Initial value of size and count variables is 0
 $CBSLogSize = 0
 $CBSCabSize = 0
 $NAbleLogSize = 0
@@ -80,6 +80,7 @@ $ComputerName = Read-Host -Prompt "Input computer name, or press enter to run lo
 }
 
 # Set the location
+$CurrentLocation = Get-Location
 If (($ComputerName -eq "") -or ($ComputerName -eq 'LocalHost')) {
 
 	# Set Location (Local)
@@ -258,5 +259,6 @@ If ($TotalSizeFreedGB -gt 1) {
 	}
 
 Write-Host "Exiting Script."
+Set-Location -Path $CurrentLocation
 
 Break
