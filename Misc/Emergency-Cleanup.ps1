@@ -8,14 +8,14 @@
 .PARAMETER ComputerName
     Determines the computer to run the scripts against.
 	
-.PARAMETER CBSLogsSelected
-    This will determine if CBS logs are selected for cleanup. Default value is True.
+.PARAMETER ExcludeCBSLogs
+    This will determine if CBS logs are excluded from the cleanup process.
 
-.PARAMETER NAbleLogsSelected
-    This will determine if N-Able logs are selected for cleanup. Default value is True.
+.PARAMETER ExcludeNAbleLogs
+    This will determine if N-Able logs are excluded from the cleanup process.
 	
-.PARAMETER SoftwareDownloadsSelected
-    This will determine if SystemDownloads folder is selected for cleanup. Default value is True.
+.PARAMETER ExcludeSoftwareDownloads
+    This will determine if SystemDownloads folder is excluded from the cleanup process.
 
 .EXAMPLE
 	PS> .\Emergency-Cleanup.ps1
@@ -34,7 +34,7 @@
 	Cleans up CBS logs, and the SoftwareDownloads directory on the local computer, but skips N-Able agent logs.
 	
 .EXAMPLE
-	PS> .\Emergency-Cleanup.ps1 -ComputerName localhost -ExcludeSoftwareDoanloads
+	PS> .\Emergency-Cleanup.ps1 -ComputerName localhost -ExcludeSoftwareDownloads
 	Cleans up CBS logs and N-Able agent logs on the local computer, but skips the SoftwareDownloads directory.
 
 .NOTES
