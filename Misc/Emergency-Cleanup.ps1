@@ -63,6 +63,8 @@ $SoftwareDistributionFilesSize = 0
 $CBSTotalCount = 0
 $NAbleLogCount = 0
 $SoftwareDistributionFilesCount = 0
+$IISLogsCount = 0
+$IISLogsSize = 0
 
 # Choose the target workstation
 if ($ComputerName -eq $null) {
@@ -213,6 +215,22 @@ If ($ExcludeSoftwareDownloads.IsPresent -eq $false) {
 
 }
 
+###################
+#                 #
+# IIS Log Cleanup #
+#                 #
+###################
+
+If ((Test-Path ".\inetpub\logs\LogFiles") -eq $true) {
+
+	$Age = (Get-Date).AddDays(-7)
+	$IISLogs = Get-ChildItem ".\inetpub\logs\LogFiles\*\*.log" | Where-Object {$_.CreationTime -lt $Age}
+	$IISLogsCount = ($IISLogs | Measure-Object).Count
+	$IISLogsSize = ($IISLogs | Measure-Object -Sum Length).Sum
+	$IISLogs | Remove-Item
+
+} 
+
 ################
 #              #
 # Final Output #
@@ -220,10 +238,10 @@ If ($ExcludeSoftwareDownloads.IsPresent -eq $false) {
 ################
 
 # Get the total count
-$TotalCount = ($CBSTotalCount + $NAbleLogCount + $SoftwareDistributionFilesCount)
+$TotalCount = ($CBSTotalCount + $NAbleLogCount + $SoftwareDistributionFilesCount + $IISLogsCount)
 
 # Get total size freed up
-$TotalSizeFreed = ($CBSLogSize + $CBSCabSize + $NAbleLogSize + $NAbleLogDataSize + $SoftwareDistributionFilesSize)
+$TotalSizeFreed = ($CBSLogSize + $CBSCabSize + $NAbleLogSize + $NAbleLogDataSize + $SoftwareDistributionFilesSize + $IISLogsSize)
 $TotalSizeFreedKB = [math]::Round(($TotalSizeFreed / 1KB),2)
 $TotalSizeFreedMB = [math]::Round(($TotalSizeFreed / 1MB),2)
 $TotalSizeFreedGB = [math]::Round(($TotalSizeFreed / 1GB),2)
@@ -235,27 +253,19 @@ If ($TotalSizeFreedGB -gt 1) {
 	
 	Write-Host "Freed up $TotalSizeFreedGB GB."
 		
-	} Else {
+	} ElseIf ($TotalSizeFreedMB -gt 1) {
 		
-		If ($TotalSizeFreedMB -gt 1) {
+		Write-Host "Freed up $TotalSizeFreedMB MB."
 		
-			Write-Host "Freed up $TotalSizeFreedMB MB."
+		} ElseIf ($TotalSizeFreedKB -gt 1) {
 			
+			Write-Host "Freed up $TotalSizeFreedKB KB."
+	
 			} Else {
-				
-				If ($TotalSizeFreedKB -gt 1) {
-				
-					Write-Host "Freed up $TotalSizeFreedKB KB."
 			
-					} Else {
-				
 				Write-Host "Freed up $TotalSizeFreed Bytes."
-					
-			}
-	
-		}
-	
-	}
+				
+				}
 
 Write-Host "Exiting Script."
 Set-Location -Path $CurrentLocation
