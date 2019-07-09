@@ -87,6 +87,11 @@ If ((($ComputerName -eq "") -or ($ComputerName -eq 'LocalHost')) -and ($ExcludeS
 	# Set Location (Local)
 	Set-Location -Path C:\
 	
+	} ElseIf (($ComputerName -eq "") -or ($ComputerName -eq 'LocalHost')) {
+
+	# Set Location (Local)
+	Set-Location -Path C:\
+	
 	} Else {
 	
 	# Set Location (Remote)
