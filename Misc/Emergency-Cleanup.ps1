@@ -123,7 +123,7 @@ If ($ExcludeCBSLogs.IsPresent -eq $false) {
 	$CBSCabSize = ($CBSCabs | Measure-Object -Sum Length).Sum
 
 
-	If ($LogCount -gt 1) {
+	If ($CBSLogCount -gt 1) {
 
 		Write-Host "Extra log files found, cleaning up."
 		$CBSLogs | Remove-Item
