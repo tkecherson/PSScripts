@@ -36,8 +36,12 @@ Foreach ($Computer in $ComputerList) {
     $CompEnc = (invoke-command -ComputerName $computer -ScriptBlock {(Get-BitLockerVolume -MountPoint c:).encryptionmethod}).value
     $Comp | Add-Member NoteProperty EncryptionType $CompEnc
 
-    Invoke-Command -ComputerName $Computer -ScriptBlock $BackupKey
-    $Comp | Add-Member NoteProperty BackedUp Yes
+    If ($CompEnc -ne 'None') {
+        Invoke-Command -ComputerName $Computer -ScriptBlock $BackupKey
+        $Comp | Add-Member NoteProperty BackedUp Yes
+    } Else {
+        $Comp | Add-Member NoteProperty BackedUp No
+    }
 
     $ComputerStatus += $Comp
     
