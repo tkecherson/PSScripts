@@ -260,7 +260,7 @@ Aquarium
 Aquifer
 Arcade
 Arch
-ArchRival
+Arch-Rival
 Archaeologist
 Archaeology
 Archeology
@@ -274,7 +274,7 @@ Argument
 Arithmetic
 Ark
 Arm
-ArmRest
+Arm-Rest
 Armadillo
 Armament
 Armchair
@@ -384,7 +384,7 @@ Babushka
 Baby
 Bachelor
 Back
-BackUp
+Back-Up
 Backbone
 Backburn
 Backdrop
@@ -538,7 +538,7 @@ Benefit
 Bengal
 Beret
 Berry
-BestSeller
+Best-Seller
 Bestseller
 Bet
 Beverage
@@ -566,7 +566,7 @@ Biosphere
 Biplane
 Birch
 Bird
-BirdWatcher
+Bird-Watcher
 Birdbath
 Birdcage
 Birdhouse
@@ -663,7 +663,7 @@ Bother
 Bottle
 Bottling
 Bottom
-BottomLine
+Bottom-Line
 Boudoir
 Bough
 Boulder
@@ -739,7 +739,7 @@ Brood
 Brook
 Broom
 Brother
-BrotherInLaw
+Brother-In-Law
 Brow
 Brown
 Brownie
@@ -768,7 +768,7 @@ Building
 Bulb
 Bulk
 Bull
-BullFighter
+Bull-Fighter
 Bulldozer
 Bullet
 Bump
@@ -784,7 +784,7 @@ Burglar
 Burial
 Burlesque
 Burn
-BurnOut
+Burn-Out
 Burning
 Burrito
 Burro
@@ -807,7 +807,7 @@ Buyer
 Buying
 Buzz
 Buzzard
-CClamp
+C-Clamp
 Cabana
 Cabbage
 Cabin
@@ -1058,7 +1058,7 @@ Chinchilla
 Chino
 Chip
 Chipmunk
-ChitChat
+Chit-Chat
 Chivalry
 Chive
 Chives
@@ -1171,7 +1171,7 @@ Club
 Clue
 Cluster
 Clutch
-CoProducer
+Co-Producer
 Coach
 Coal
 Coalition
@@ -1390,7 +1390,7 @@ Cooperation
 Coordination
 Coordinator
 Cop
-CopOut
+Cop-Out
 Cope
 Copper
 Copy
@@ -1439,7 +1439,7 @@ Counsellor
 Counselor
 Count
 Counter
-CounterForce
+Counter-Force
 Counterpart
 Counterterrorism
 Countess
@@ -1524,8 +1524,8 @@ Croissant
 Crook
 Crop
 Cross
-CrossContamination
-CrossStitch
+Cross-Contamination
+Cross-Stitch
 Crotch
 Croup
 Crow
@@ -1547,7 +1547,7 @@ Cub
 Cuckoo
 Cucumber
 Cue
-CuffLink
+Cuff-Link
 Cuisine
 Cultivar
 Cultivator
@@ -1645,7 +1645,7 @@ Decadence
 Decency
 Decimal
 Decision
-DecisionMaking
+Decision-Making
 Deck
 Declaration
 Declination
@@ -1971,9 +1971,9 @@ Dynamite
 Dynamo
 Dynasty
 Dysfunction
-EBook
-EMail
-EReader
+E-Book
+E-Mail
+E-Reader
 Eagle
 Eaglet
 Ear
@@ -2157,7 +2157,7 @@ Evaluator
 Evaporation
 Eve
 Evening
-EveningWear
+Evening-Wear
 Event
 Everybody
 Everyone
@@ -2167,8 +2167,8 @@ Evidence
 Evil
 Evocation
 Evolution
-ExHusband
-ExWife
+Ex-Husband
+Ex-Wife
 Exaggeration
 Exam
 Examination
@@ -2254,7 +2254,7 @@ Faith
 Faithful
 Fall
 Fallacy
-FallingOut
+Falling-Out
 Fame
 Familiar
 Familiarity
@@ -2263,7 +2263,7 @@ Fan
 Fang
 Fanlight
 Fanny
-FannyPack
+Fanny-Pack
 Fantasy
 Farm
 Farmer
@@ -2275,7 +2275,7 @@ Fashion
 Fat
 Fate
 Father
-FatherInLaw
+Father-In-Law
 Fatigue
 Fatigues
 Faucet
@@ -2391,7 +2391,7 @@ Flicker
 Flight
 Flint
 Flintlock
-FlipFlops
+Flip-Flops
 Flock
 Flood
 Floodplain
@@ -2534,7 +2534,7 @@ Gaffer
 Gain
 Gaiters
 Gale
-GallBladder
+Gall-Bladder
 Gallery
 Galley
 Gallon
@@ -2543,7 +2543,7 @@ Gambling
 Game
 Gamebird
 Gaming
-GammaRay
+Gamma-Ray
 Gander
 Gang
 Gap
@@ -2635,7 +2635,7 @@ Glut
 Glutamate
 Gnat
 Gnu
-GoKart
+Go-Kart
 Goal
 Goat
 Gobbler
@@ -2652,7 +2652,7 @@ Golf
 Gondola
 Gong
 Good
-GoodBye
+Good-Bye
 Goodbye
 Goodie
 Goodness
@@ -2660,7 +2660,7 @@ Goodnight
 Goodwill
 Goose
 Gopher
-GoreTex
+Gore-Tex
 Gorilla
 Gosling
 Gossip
@@ -2668,7 +2668,7 @@ Governance
 Government
 Governor
 Gown
-GrabBag
+Grab-Bag
 Grace
 Grade
 Gradient
@@ -2708,8 +2708,8 @@ Gravity
 Gravy
 Gray
 Grease
-GreatGrandfather
-GreatGrandmother
+Great-Grandfather
+Great-Grandmother
 Greatness
 Greed
 Green
@@ -2769,8 +2769,8 @@ Hair
 Haircut
 Hake
 Half
-HalfBrother
-HalfSister
+Half-Brother
+Half-Sister
 Halibut
 Hall
 Halloween
@@ -2782,7 +2782,7 @@ Hammer
 Hammock
 Hamster
 Hand
-HandHolding
+Hand-Holding
 Handball
 Handful
 Handgun
@@ -2798,7 +2798,7 @@ Happiness
 Harald
 Harbor
 Harbour
-HardHat
+Hard-Hat
 Hardboard
 Hardcover
 Hardening
@@ -2842,11 +2842,11 @@ Headline
 Headquarters
 Headrest
 Health
-HealthCare
+Health-Care
 Hearing
 Hearsay
 Heart
-HeartThrob
+Heart-Throb
 Heartache
 Heartbeat
 Hearth
@@ -2893,7 +2893,7 @@ Hiccups
 Hide
 Hierarchy
 High
-HighRise
+High-Rise
 Highland
 Highlight
 Highway
@@ -3022,7 +3022,7 @@ Hypochondria
 Hypothermia
 Hypothesis
 Ice
-IceCream
+Ice-Cream
 Iceberg
 Icebreaker
 Icecream
@@ -3071,8 +3071,8 @@ Impropriety
 Improvement
 Impudence
 Impulse
-InJoke
-InLaws
+In-Joke
+In-Laws
 Inability
 Inauguration
 Inbox
@@ -3307,7 +3307,7 @@ Keyboard
 Keyboarding
 Keystone
 Kick
-KickOff
+Kick-Off
 Kid
 Kidney
 Kielbasa
@@ -3337,12 +3337,12 @@ Knee
 Kneejerk
 Knickers
 Knife
-KnifeEdge
+Knife-Edge
 Knight
 Knitting
 Knock
 Knot
-KnowHow
+Know-How
 Knowledge
 Knuckle
 Koala
@@ -3621,7 +3621,7 @@ Maintainer
 Maintenance
 Maize
 Major
-MajorLeague
+Major-League
 Majority
 Makeover
 Maker
@@ -3790,7 +3790,7 @@ Microlending
 Micronutrient
 Microphone
 Microwave
-MidCourse
+Mid-Course
 Midden
 Middle
 Middleman
@@ -3823,7 +3823,7 @@ Mine
 Mineral
 Mineshaft
 Mini
-MiniSkirt
+Mini-Skirt
 Minibus
 Minimalism
 Minimum
@@ -3833,7 +3833,7 @@ Minister
 Mink
 Minnow
 Minor
-MinorLeague
+Minor-League
 Minority
 Mint
 Minute
@@ -3923,7 +3923,7 @@ Most
 Motel
 Moth
 Mother
-MotherInLaw
+Mother-In-Law
 Motion
 Motivation
 Motive
@@ -3958,8 +3958,8 @@ Musculature
 Museum
 Mushroom
 Music
-MusicBox
-MusicMaking
+Music-Box
+Music-Making
 Musician
 Muskrat
 Mussel
@@ -4121,7 +4121,7 @@ Octopus
 Odometer
 Odyssey
 Oeuvre
-OffRamp
+Off-Ramp
 Offence
 Offense
 Offer
@@ -4377,7 +4377,7 @@ Pedal
 Peek
 Peen
 Peer
-PeerToPeer
+Peer-To-Peer
 Pegboard
 Pelican
 Pelt
@@ -4486,7 +4486,7 @@ Pimp
 Pimple
 Pin
 Pinafore
-PinceNez
+Pince-Nez
 Pine
 Pineapple
 Pinecone
@@ -4563,7 +4563,7 @@ Plunger
 Plywood
 Pneumonia
 Pocket
-PocketWatch
+Pocket-Watch
 Pocketbook
 Pod
 Podcast
@@ -4742,7 +4742,7 @@ Prompt
 Pronoun
 Pronunciation
 Proof
-ProofReader
+Proof-Reader
 Propaganda
 Propane
 Property
@@ -5124,7 +5124,7 @@ Robotics
 Rock
 Rocker
 Rocket
-RocketShip
+Rocket-Ship
 Rod
 Role
 Roll
@@ -5279,7 +5279,7 @@ Screen
 Screening
 Screenwriting
 Screw
-ScrewUp
+Screw-Up
 Screwdriver
 Scrim
 Scrip
@@ -5320,9 +5320,9 @@ Segment
 Seizure
 Selection
 Self
-SelfConfidence
-SelfControl
-SelfEsteem
+Self-Confidence
+Self-Control
+Self-Esteem
 Seller
 Selling
 Semantics
@@ -5412,7 +5412,7 @@ Shit
 Shoat
 Shock
 Shoe
-ShoeHorn
+Shoe-Horn
 Shoehorn
 Shoelace
 Shoemaker
@@ -5434,7 +5434,7 @@ Shoulder
 Shout
 Shovel
 Show
-ShowStopper
+Show-Stopper
 Shower
 Shred
 Shrimp
@@ -5484,7 +5484,7 @@ Sinuosity
 Sip
 Sir
 Sister
-SisterInLaw
+Sister-In-Law
 Sitar
 Site
 Situation
@@ -5750,7 +5750,7 @@ State
 Statement
 Statin
 Station
-StationWagon
+Station-Wagon
 Statistic
 Statistics
 Statue
@@ -5767,19 +5767,19 @@ Stem
 Stench
 Stencil
 Step
-StepAunt
-StepBrother
-StepDaughter
-StepFather
-StepGrandfather
-StepGrandmother
-StepMother
-StepSister
-StepSon
-StepUncle
+Step-Aunt
+Step-Brother
+Step-Daughter
+Step-Father
+Step-Grandfather
+Step-Grandmother
+Step-Mother
+Step-Sister
+Step-Son
+Step-Uncle
 Stepdaughter
 Stepmother
-SteppingStone
+Stepping-Stone
 Stepson
 Stereo
 Stew
@@ -5792,11 +5792,11 @@ Stimulation
 Stimulus
 Sting
 Stinger
-StirFry
+Stir-Fry
 Stitch
 Stitcher
 Stock
-StockInTrade
+Stock-In-Trade
 Stockings
 Stole
 Stomach
@@ -5811,7 +5811,7 @@ Store
 Storey
 Storm
 Story
-StoryTelling
+Story-Telling
 Storyboard
 Stot
 Stove
@@ -5978,7 +5978,7 @@ Synonym
 Synthesis
 Syrup
 System
-TShirt
+T-Shirt
 Tab
 Tabby
 Tabernacle
@@ -5997,13 +5997,13 @@ Tail
 Tailbud
 Tailor
 Tailspin
-TakeOut
+Take-Out
 Takeover
 Tale
 Talent
 Talk
 Talking
-TamO'Shanter
+Tam-O'-Shanter
 Tamale
 Tambour
 Tambourine
@@ -6011,7 +6011,7 @@ Tan
 Tandem
 Tangerine
 Tank
-TankTop
+Tank-Top
 Tanker
 Tankful
 Tap
@@ -6185,7 +6185,7 @@ Toilet
 Tolerance
 Tolerant
 Toll
-TomTom
+Tom-Tom
 Tomatillo
 Tomato
 Tomb
@@ -6204,7 +6204,7 @@ Toothbrush
 Toothpaste
 Toothpick
 Top
-TopHat
+Top-Hat
 Topic
 Topsail
 Toque
@@ -6219,12 +6219,12 @@ Tosser
 Total
 Tote
 Touch
-ToughGuy
+Tough-Guy
 Tour
 Tourism
 Tourist
 Tournament
-TowTruck
+Tow-Truck
 Towel
 Tower
 Town
@@ -6333,7 +6333,7 @@ Tumbler
 Tummy
 Tuna
 Tune
-TuneUp
+Tune-Up
 Tunic
 Tunnel
 Turban
@@ -6567,7 +6567,7 @@ Wardrobe
 Warfare
 Warlock
 Warlord
-WarmUp
+Warm-Up
 Warming
 Warmth
 Warning
@@ -6624,10 +6624,10 @@ Weird
 Welcome
 Welfare
 Well
-WellBeing
+Well-Being
 West
 Western
-WetBar
+Wet-Bar
 Wetland
 Wetsuit
 Whack
@@ -6664,7 +6664,7 @@ Willingness
 Willow
 Win
 Wind
-WindChime
+Wind-Chime
 Windage
 Window
 Windscreen
@@ -6686,7 +6686,7 @@ Wish
 Wisteria
 Wit
 Witch
-WitchHunt
+Witch-Hunt
 Withdrawal
 Witness
 Wok
@@ -6776,5 +6776,5 @@ Zone
 Zoo
 Zoologist
 Zoology
-ZootSuit
+Zoot-Suit
 Zucchini
