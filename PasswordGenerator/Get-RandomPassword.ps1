@@ -2,81 +2,88 @@
 [OutputType()]
 param(
     [Alias("Length")]
-    [Parameter(Position=0,Mandatory=$False)]
+    [Parameter(ParameterSetName="Normal",Position=0,Mandatory=$False)]
+    [Parameter(ParameterSetName="AlphaNumeric")]
+    [Parameter(ParameterSetName="Hex")]
+    [Parameter(ParameterSetName="All")]
     [Int]$PassLength=32,
     [Alias("Count")]
-    [Parameter(Position=1,Mandatory=$False)]
+    [Parameter(ParameterSetName="Normal",Position=1,Mandatory=$False)]
+    [Parameter(ParameterSetName="AlphaNumeric")]
+    [Parameter(ParameterSetName="Hex")]
     [Int]$PassCount=10,
     [Alias("AN")]
-    [Parameter(Mandatory=$False)]
+    [Parameter(ParameterSetName="AlphaNumeric",Mandatory=$False)]
     [Switch]$AlphaNumeric,
     [Alias("Hex")]
-    [Parameter(Mandatory=$False)]
+    [Parameter(ParameterSetName="Hex",Mandatory=$False)]
     [Switch]$Hexadecimal,
-    [Parameter(Mandatory=$False)]
+    [Parameter(ParameterSetName="All",Mandatory=$False)]
     [Switch]$All
 )
-
-If ((($AlphaNumeric.IsPresent) -and ($Hexadecimal.IsPresent)) -or (($AlphaNumeric.IsPresent) -and ($All.IsPresent)) -or (($All.IsPresent) -and ($Hexadecimal.IsPresent)) -or (($AlphaNumeric.IsPresent) -and ($Hexadecimal.IsPresent) -and ($All.IsPresent))) {
-    Throw "Please choose one of the three switches (-AlphaNumeric, -Hexadecimal, -All) and run the command again."
-}
 
 # Define Password Object
 $PassList = @()
 
 If ($All.IsPresent) {$PassCount = 1}
 
-$i = 1
-While ($i -le $passcount) {
+If (!($All.IsPresent)) {
 
-#Generate Password
-If (!($AlphaNumeric.IsPresent) -and !($Hexadecimal.IsPresent) -and !($All.IsPresent)) {
-    $NewPass = ""
-    $charCount = 1
-    while ($CharCount -le $PassLength) {
-        $character = -join ((33..126) | Get-Random | ForEach-Object {[char]$_})
-        $NewPass += $character 
-        $charCount += 1
+    $i = 1
+    While ($i -le $passcount) {
+
+        #Generate Password
+        If (!($AlphaNumeric.IsPresent) -and !($Hexadecimal.IsPresent) -and !($All.IsPresent)) {
+            $NewPass = ""
+            $charCount = 1
+            while ($CharCount -le $PassLength) {
+                $character = -join ((33..126) | Get-Random | ForEach-Object {[char]$_})
+                $NewPass += $character 
+                $charCount += 1
+            }
+            
+            $password = New-Object PSObject 
+            $password | Add-Member Noteproperty Passwords $NewPass
+            $passlist += $password
+
+            $i += 1
+        }
+
+        If ($AlphaNumeric.IsPresent) {
+            $ANPass = ""
+            $charCount = 1
+            while ($CharCount -le $PassLength) {
+                $character = -join ((48..57) + (65..90) + (97..122) | Get-Random | ForEach-Object {[char]$_})
+                $ANPass += $character 
+                $charCount += 1
+            }
+
+            $password = New-Object PSObject 
+            $password | Add-Member Noteproperty Passwords $ANPass
+            $passlist += $password
+
+            $i += 1
+            }
+        
+        If ($Hexadecimal.IsPresent) {
+            $HexPass = ""
+            $charCount = 1
+            while ($CharCount -le $PassLength) {
+                $character = -join ((48..57) + (65..70) | Get-Random | ForEach-Object {[char]$_})
+                $HexPass += $character 
+                $charCount += 1
+            }
+
+            $password = New-Object PSObject 
+            $password | Add-Member Noteproperty Passwords $HexPass
+            $passlist += $password
+
+            $i += 1
+        }
+
     }
-    
-    $password = New-Object PSObject 
-    $password | Add-Member Noteproperty Passwords $NewPass
-    $passlist += $password
 
-    $i += 1
-    }
-
-If ($AlphaNumeric.IsPresent) {
-    $ANPass = ""
-    $charCount = 1
-    while ($CharCount -le $PassLength) {
-        $character = -join ((48..57) + (65..90) + (97..122) | Get-Random | ForEach-Object {[char]$_})
-        $ANPass += $character 
-        $charCount += 1
-    }
-
-    $password = New-Object PSObject 
-    $password | Add-Member Noteproperty Passwords $ANPass
-    $passlist += $password
-
-    $i += 1
-    }
-
-If ($Hexadecimal.IsPresent) {
-    $HexPass = ""
-    $charCount = 1
-    while ($CharCount -le $PassLength) {
-        $character = -join ((48..57) + (65..70) | Get-Random | ForEach-Object {[char]$_})
-        $HexPass += $character 
-        $charCount += 1
-    }
-
-    $password = New-Object PSObject 
-    $password | Add-Member Noteproperty Passwords $HexPass
-    $passlist += $password
-
-    $i += 1
-    }
+}
 
 If ($All.IsPresent) {
     $RandPass = ""
@@ -118,8 +125,6 @@ If ($All.IsPresent) {
     $password | Add-Member Noteproperty Type "Hexadecimal"
     $passlist += $password
 
-    $i += 1
     }
-}
 
 $PassList
