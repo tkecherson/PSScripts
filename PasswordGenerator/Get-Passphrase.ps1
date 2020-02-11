@@ -28,4 +28,4 @@ $i += 1
 }
 
 #Output Password Object
-$PassList
+$PassList | Sort-Object -Property PassLength -Descending

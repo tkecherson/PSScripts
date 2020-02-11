@@ -1,12 +1,16 @@
 [CmdletBinding(DefaultParameterSetName='Normal')]
 [OutputType()]
 param(
+    [Alias("Length")]
     [Parameter(Position=0,Mandatory=$False)]
     [Int]$PassLength=32,
+    [Alias("Count")]
     [Parameter(Position=1,Mandatory=$False)]
     [Int]$PassCount=10,
+    [Alias("AN")]
     [Parameter(Mandatory=$False)]
     [Switch]$AlphaNumeric,
+    [Alias("Hex")]
     [Parameter(Mandatory=$False)]
     [Switch]$Hexadecimal,
     [Parameter(Mandatory=$False)]
@@ -37,7 +41,6 @@ If (!($AlphaNumeric.IsPresent) -and !($Hexadecimal.IsPresent) -and !($All.IsPres
     
     $password = New-Object PSObject 
     $password | Add-Member Noteproperty Passwords $NewPass
-    $password | Add-Member Noteproperty Type "Random"
     $passlist += $password
 
     $i += 1
@@ -54,7 +57,6 @@ If ($AlphaNumeric.IsPresent) {
 
     $password = New-Object PSObject 
     $password | Add-Member Noteproperty Passwords $ANPass
-    $password | Add-Member Noteproperty Type "AlphaNumeric"
     $passlist += $password
 
     $i += 1
@@ -71,7 +73,6 @@ If ($Hexadecimal.IsPresent) {
 
     $password = New-Object PSObject 
     $password | Add-Member Noteproperty Passwords $HexPass
-    $password | Add-Member Noteproperty Type "Hexadecimal"
     $passlist += $password
 
     $i += 1
